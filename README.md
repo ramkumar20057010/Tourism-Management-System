@@ -8,9 +8,7 @@ packages and customer details efficiently.
 - User registration and login
 - View tourism packages
 - Package booking system
-- Admin dashboard
 - Manage tour packages and bookings
-- Customer details management
 
 ## Technologies Used
 - HTML
