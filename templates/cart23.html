@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style2.css')}}">
+
+</head>
+<style>
+    .zero-cart h1{
+        color: green;
+    }
+</style>
+<body>
+    <header class="head">
+        <nav class="navbar">
+
+
+
+            <div class="guest">
+                {% if "email" not in session:%}
+                <h1>G</h1>
+                <p>Guest</p>
+                {%else:%}
+                <h1>{{session["u_name"][0]}}</h1>
+                <p>{{session["u_name"]}}</p>
+                {%endif%}
+            </div>
+            <div class="cont">
+                <h1>Tamilnadu Tourism</h1>
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/history">History</a></li>
+                {%if "email" not in session: %}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+                {%else:%}
+                <li><a href="/logout">Logout</a></li>
+                {%endif%}
+            </ul>
+
+
+
+        </nav>
+    </header>
+    <section class="seccart">
+        {% if "email" not in session:%}
+        <div class="nocart">
+            <center>
+                <img src="{{url_for('static',filename='web/idea.avif')}}" alt="loading!..."><br>
+                <button onclick="location.href='/login'">Please Login!...</button>
+            </center>
+        </div>
+        {%else:%}
+        <div class="cartpdt">
+            {%if rows==():%}
+            <div class="zero-cart">
+                <center>
+                    <h1>YOUR CART IS EMPTY!...</h1>
+                    <img src="{{url_for('static',filename='web/cart121.jpeg')}}" alt="loading...">
+                </center>
+            </div>
+            {%else:%}
+            {%for i in rows:%}
+            <div class="cartpdt1">
+                <div class="cartimg">
+                    {%if i[0]=="Chennai":%}
+                        <img src="{{url_for('static',filename='chennai/chennai-marina-beach.png')}}" alt="loading!...">
+                    {%elif i[0]=="Mahabalipuram":%}
+                        <img src="{{url_for('static',filename='mahabalipuram/mahabalipuram-wide-beach.png')}}" alt="loading!...">
+                    {%elif i[0]=="Vellore":%}
+                        <img src="{{url_for('static',filename='vellore/vellore-fort.png')}}" alt="loading!...">
+                    {%elif i[0]=="Kanchipuram":%}
+                        <img src="{{url_for('static',filename='kanchipuram/kanchipuram-dutch-fort.png')}}" alt="loading!...">
+                    {%elif i[0]=="Coimbatore":%}
+                        <img src="{{url_for('static',filename='coimbatore/coimbatore-black-thunder-theme-park.png')}}" alt="loading!...">
+                    {%elif i[0]=="Ooty":%}
+                        <img src="{{url_for('static',filename='ooty/ooty-doddabetta-peak.png')}}" alt="loading!...">
+                    {%elif i[0]=="Thanjavur":%}
+                        <img src="{{url_for('static',filename='thanjavur/thanjavur-vijaynagar-fort.png')}}" alt="loading!...">
+                    {%elif i[0]=="Madurai":%}
+                        <img src="{{url_for('static',filename='madurai/madurai-kutladampatti-falls.png')}}" alt="loading!...">
+                    {%elif i[0]=="Kodaikanal":%}
+                        <img src="{{url_for('static',filename='kodaikanal/kodaikanal-lake.png')}}" alt="loading!...">
+                    {%elif i[0]=="Kanyakumari":%}
+                        <img src="{{url_for('static',filename='kanyakumari/kanyakumari-beach.png')}}" alt="loading!...">
+                    {%elif i[0]=="Rameswaram":%}
+                        <img src="{{url_for('static',filename='rameswaram/rameswaram-dhanush-kodi-beach-pint.png')}}" alt="loading!...">
+                    {%elif i[0]=="Tirunelveli":%}
+                        <img src="{{url_for('static',filename='tirunelveli/tirunelveli-agasthiyar-falls.png')}}" alt="loading!...">
+                    {%endif%}
+                </div>
+                <div class="cartdetails">
+                    <h3>
+                        Place:<mark>{{i[0]}}</mark><br>
+                        Location:<mark>{{i[3]}}</mark> | Date: <mark>{{i[1]}}</mark><br>
+                        Hotel: <mark>{{i[5]}}({{i[8]}} Days, {{i[7]}} Rooms)</mark><br>
+                        Total: <mark>{{i[10]}}</mark><br>
+                        <div class="confirm">
+                            <form action="/history" method="GET">
+                                <input type="text" name="ttid" value="{{i[11]}}" hidden>
+                                <button type="submit" class="conf" name="check" value="checked">CONFIRM</button>
+                            </form>
+                            <form action="/history" method="GET">
+                                <input type="text" name="ttid" value="{{i[11]}}" hidden>
+                                <button type="submit" class="rem" name="remove" value="removed">REMOVE</button>
+                            </form>
+                        </div>
+                    </h3>
+                </div>
+            </div>
+            {%endfor%}
+            {%endif%}
+        </div>
+        {%endif%}
+
+    </section>
+
+
+
+    <footer class="foot">
+        <h1>Tamilnadu Tourism</h1>
+        <p>Copyright © 2024 Tamilnadu Tourism. All rights reserved</p>
+    </footer>
+</body>
+
+</html>

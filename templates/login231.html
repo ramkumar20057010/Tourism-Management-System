@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style2.css')}}">
+    
+</head>
+<style>
+    @keyframes fadein {
+        0% {
+            background-image: url('chennai-semmozhi-poonga.png');
+            transition: 0.5s;
+
+        }
+
+        25% {
+            background-image: url('chennai-snow-kingdom.png');
+            transition: 0.5s;
+        }
+
+        50% {
+            background-image: url('chennai-VGP-marine-kingdom.png');
+            transition: 0.5s;
+        }
+
+        75% {
+            background-image: url('');
+            transition: 0.5s;
+        }
+
+        100% {
+            background-image: url('');
+            transition: 0.5s;
+        }
+    }
+</style>
+
+<body>
+    <header class="head">
+        <nav class="navbar">
+            
+
+
+            <div class="guest">
+                {% if "email" not in session:%}
+                <h1>G</h1>
+                <p>Guest</p>
+                {%else:%}
+                <h1>{{session["u_name"][0]}}</h1>
+                <p>{{session["u_name"]}}</p>
+                {%endif%}
+            </div>
+            <div class="cont">
+                <h1>Tamilnadu Tourism</h1>
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/history">History</a></li>
+                {%if "email" not in session: %}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+                {%else:%}
+                <li><a href="/logout">Logout</a></li>
+                {%endif%}
+            </ul>
+
+
+
+        </nav>
+    </header>
+
+    <section class="seclog">
+        <div class="log">
+            <h1>LOG-IN</h1>
+            <form action="/login" method="GET">
+                <input type="email" name="mail" placeholder="Enter your Email:" required><br><br>
+                <input type="password" name="pass" placeholder="Enter password:" required><br><br>
+                <center><button type="submit" name="log" value="logged">LOG-IN</button></center>
+            </form>
+            <p class="msg">{{err}}</p>
+            <p>Don't have an account? Please <a href="/register">Register!</a></p>
+        </div>
+    </section>
+
+    <footer class="foot">
+        <h1>Tamilnadu Tourism</h1>
+        <p>Copyright © 2024 Tamilnadu Tourism. All rights reserved</p>
+    </footer>
+</body>
+
+</html>

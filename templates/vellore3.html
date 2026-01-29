@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style2.css')}}">
+
+</head>
+<style>
+    .secform {
+        background-image: url("{{url_for('static',filename='chennai/chennai-semmozhi-poonga.png')}}");
+    }
+
+    .rqlogin button {
+        margin-top: 100px;
+    }
+
+    @keyframes fadein {
+        0% {
+            background-image: url('{{url_for("static",filename="vellore/vellore-fort.png")}}');
+            transition: 0.5s;
+
+        }
+
+        25% {
+            background-image: url('{{url_for("static",filename="vellore/vellore-golden-temple.png")}}');
+            transition: 0.5s;
+        }
+
+        50% {
+            background-image: url('{{url_for("static",filename="vellore/vellore-amirthi-zoological-park.png")}}');
+            transition: 0.5s;
+        }
+
+        75% {
+            background-image: url('{{url_for("static",filename="vellore/vellore-mordhana-dam.png")}}');
+            transition: 0.5s;
+        }
+
+        100% {
+            background-image: url('{{url_for("static",filename="vellore/vellore-Palamathi-hills.png")}}');
+            transition: 0.5s;
+        }
+    }
+</style>
+
+<body>
+    <header class="head">
+        <nav class="navbar">
+
+
+
+            <div class="guest">
+                {% if "email" not in session:%}
+                <h1>G</h1>
+                <p>Guest</p>
+                {%else:%}
+                <h1>{{session["u_name"][0]}}</h1>
+                <p>{{session["u_name"]}}</p>
+                {%endif%}
+            </div>
+            <div class="cont">
+                <h1>Tamilnadu Tourism</h1>
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/history">History</a></li>
+                {%if "email" not in session: %}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+                {%else:%}
+                <li><a href="/logout">Logout</a></li>
+                {%endif%}
+            </ul>
+
+
+
+        </nav>
+    </header>
+    <section class="secanimation">
+        <h1>VELLORE</h1>
+    </section>
+    <section class="sechome">
+        <h1 class="cont2">POPULAR PLACES IN VELLORE!</h1>
+        <div class="sec1">
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='vellore/vellore-amirthi-zoological-park.png')}}"
+                        alt="loading..">
+                    <h1>Amirthi Zoological Park</h1>
+                </center>
+            </div>
+
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='vellore/vellore-archaeological-museum.png')}}"
+                        alt="loading..">
+                    <h1>Vellore Archaeological Museum</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='vellore/vellore-fort.png')}}" alt="loading..">
+                    <h1>Vellore Fort</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='vellore/vellore-golden-temple.png')}}" alt="loading..">
+                    <h1>Golden Temple</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='vellore/vellore-jalakandeswar-temple.png')}}"
+                        alt="loading..">
+                    <h1>Jalakandeswar Temple</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='vellore/vellore-kavalur-observatory.png')}}" alt="loading..">
+                    <h1>Kavalur Observatory</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='vellore/vellore-khanna-fiesta-hotel.png')}}" alt="loading..">
+                    <h1>Khanna Fiesta Hotel</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='vellore/vellore-mordhana-dam.png')}}" alt="loading..">
+                    <h1>Mordhana Dam</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='vellore/vellore-muthumandapam.jpg')}}" alt="loading..">
+                    <h1>Muthumandapam</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='vellore/vellore-nava-sai-baba-mandir.png')}}"
+                        alt="loading..">
+                    <h1>Nava Sai Baba Mandir</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='vellore/vellore-Palamathi-hills.png')}}" alt="loading..">
+                    <h1>Palamathi Hills</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='vellore/vellore-St-johns-clg.png')}}" alt="loading..">
+                    <h1>St. John's Church</h1>
+                </center>
+            </div>
+
+        </div>
+    </section>
+    {%if "email" not in session:%}
+    <section class="rqlogin">
+        <center><button onclick="location.href='/login'">Please Login To Book!..</button></center>
+    </section>
+    {%else:%}
+    <section class="secform">
+        <div class="tform">
+            <div class="tourform">
+                <form action="/cart" method="GET" class="tft">
+                    <h1>Tour Booking</h1>
+                    <input type="text" name="uid" value="{{session['u_id']}}" hidden>
+                    <input type="text" name="place" value="Vellore" hidden>
+                    <label>Enter No. of Men:</label>
+                    <input type="number" name="men" min="0" max="100" required><br><br>
+                    <label>Enter No. of Women:</label>
+                    <input type="number" name="women" min="0" max="100" required><br><br>
+                    <label>Enter No. of Kids:</label>
+                    <input type="number" name="children" min="0" max="100" required><br><br>
+                    <label>Enter Date:</label>
+                    <input type="date" name="tdate" required><br><br>
+                    <label>Enter Time:</label>
+                    <input type="time" name="ttime" required><br><br>
+                    <label>Enter Location:</label>
+                    <input type="text" name="dest" required><br><br>
+                    <h1>Hotel Booking</h1>
+                    <label>Select Hotel:</label>
+                    <select name="hname" required>
+                        <option value="Hotel Akshaya Towers">Hotel Akshaya Towers</option>
+                        <option value="Hotel Green Plaza">Hotel Green Plaza</option>
+                        <option value="Hotel Valluvar Inn">Hotel Valluvar Inn</option>
+                        <option value="Hotel Ashiana">Hotel Ashiana</option>
+                        <option value="Hotel Sri Krishna">Hotel Sri Krishna</option>
+                    </select><br><br>
+                    <label>Enter No. of Days:</label>
+                    <input type="number" name="hdays" min="1" max="50" required><br><br>
+                    <label>Enter No. of Rooms:</label>
+                    <input type="number" name="hrooms" min="1" max="50" required><br><br>
+                    <button type="submit" name="book" value="booked">Book</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    {%endif%}
+    <footer class="foot">
+        <h1>Tamilnadu Tourism</h1>
+        <p>Copyright © 2024 Tamilnadu Tourism. All rights reserved</p>
+    </footer>
+</body>
+
+</html>

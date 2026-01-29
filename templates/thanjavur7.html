@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style2.css')}}">
+    
+</head>
+<style>
+    .secform{
+        background-image: url("{{url_for('static',filename='chennai/chennai-semmozhi-poonga.png')}}");
+    }
+    .rqlogin button{
+        margin-top: 100px;
+    }
+    @keyframes fadein {
+        0% {
+            background-image: url('{{url_for("static",filename="thanjavur/thanjavur-gangai-konda-cholapuram.png")}}');
+            transition: 0.5s;
+
+        }
+
+        25% {
+            background-image: url('{{url_for("static",filename="thanjavur/thanjavur-manora-fort.png")}}');
+            transition: 0.5s;
+        }
+
+        50% {
+            background-image: url('{{url_for("static",filename="thanjavur/thanjavur-serfoji-sarasavati-mahal.png")}}');
+            transition: 0.5s;
+        }
+
+        75% {
+            background-image: url('{{url_for("static",filename="thanjavur/thanjavur-vijaynagar-fort.png")}}');
+            transition: 0.5s;
+        }
+
+        100% {
+            background-image: url('{{url_for("static",filename="thanjavur/thanjavur-royal-palace-art-gallery.png")}}');
+            transition: 0.5s;
+        }
+    }
+</style>
+
+<body>
+    <header class="head">
+        <nav class="navbar">
+            
+
+
+            <div class="guest">
+                {% if "email" not in session:%}
+                <h1>G</h1>
+                <p>Guest</p>
+                {%else:%}
+                <h1>{{session["u_name"][0]}}</h1>
+                <p>{{session["u_name"]}}</p>
+                {%endif%}
+            </div>
+            <div class="cont">
+                <h1>Tamilnadu Tourism</h1>
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/history">History</a></li>
+                {%if "email" not in session: %}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+                {%else:%}
+                <li><a href="/logout">Logout</a></li>
+                {%endif%}
+            </ul>
+
+
+
+        </nav>
+    </header>
+    <section class="secanimation">
+        <h1>THANJAVUR</h1>
+    </section>
+    <section class="sechome">
+        <h1 class="cont2">POPULAR PLACES IN THANJAVUR!</h1>
+        <div class="sec1">
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='thanjavur/thanjavur-aiyappar-temple.png')}}" alt="loading..">
+                    <h1>Aiyappar Temple</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='thanjavur/thanjavur-brihadeeshwara-temple.png')}}" alt="loading..">
+                    <h1>Brihadeeshwara Temple</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='thanjavur/thanjavur-gangai-konda-cholapuram.png')}}" alt="loading..">
+                    <h1>Gangai Konda Cholapuram</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='thanjavur/thanjavur-hotel-akshith-inn.png')}}" alt="loading..">
+                    <h1>Hotel Akshith Inn</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='thanjavur/thanjavur-manora-fort.png')}}" alt="loading..">
+                    <h1>Manora Fort</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='thanjavur/thanjavur-poondi-madha-church.png')}}" alt="loading..">
+                    <h1>Poondi Madha Church</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='thanjavur/thanjavur-rajali-birds-park.png')}}" alt="loading..">
+                    <h1>Rajali Birds Park</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='thanjavur/thanjavur-rajarajan-manimandapam.png')}}" alt="loading..">
+                    <h1>Rajarajan Manimandapam</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='thanjavur/thanjavur-royal-palace-art-gallery.png')}}" alt="loading..">
+                    <h1>Royal Palace Art Gallery</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='thanjavur/thanjavur-sangeetha-mahal.png')}}" alt="loading..">
+                    <h1>Sangeetha Mahal</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='thanjavur/thanjavur-serfoji-sarasavati-mahal.png')}}" alt="loading..">
+                    <h1>Serfoji Saraswathi Mahal</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='thanjavur/thanjavur-swami-malai-temple.png')}}" alt="loading..">
+                    <h1>Swami Malai Temple</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='thanjavur/thanjavur-thiruvanajozhi-temple.png')}}" alt="loading..">
+                    <h1>Thiruvanajozhi Temple</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='thanjavur/thanjavur-vijaynagar-fort.png')}}" alt="loading..">
+                    <h1>Vijayanagar Fort</h1>
+                </center>
+            </div>
+        </div>
+    </section>
+
+
+    {%if "email" not in session:%}
+    <section class="rqlogin">
+        <center><button onclick="location.href='/login'">Please Login To Book!..</button></center>
+    </section>
+    {%else:%}  
+    
+    
+
+    <section class="secform">
+        <div class="tform">
+            <div class="tourform">
+                <form action="/cart" method="GET" class="tft">
+                    <h1>Tour Booking</h1>
+                    <input type="text" name="uid" value="{{session['u_id']}}" hidden>
+                    <input type="text" name="place" value="Thanjavur" hidden>
+                    <label>Enter No. of Men:</label>
+                    <input type="number" name="men" min="0" max="100" required><br><br>
+                    <label>Enter No. of Women:</label>
+                    <input type="number" name="women" min="0" max="100 " required><br><br>
+                    <label>Enter No. of Kids:</label>
+                    <input type="number" name="children" min="0" max="100" required><br><br>
+                    <label>Enter Date:</label>
+                    <input type="date" name="tdate" required><br><br>
+                    <label>Enter Time:</label>
+                    <input type="time" name="ttime" required><br><br>
+                    <label>Enter Location:</label>
+                    <input type="text" name="dest" required><br><br>
+                    <h1>Hotel Booking</h1>
+                    <label>Select Hotel:</label>
+                    <select name="hname" required>
+                        <option value="Treebo Naaz Royal">Treebo Naaz Royal</option>
+                        <option value="Hotel Oriental Towers">Hotel Oriental Towers</option>
+                        <option value="Mahanas Paradise">Mahanas Paradise</option>
+                        <option value="Abi's Inn">Abi's Inn</option>
+                        <option value="Ram's Inn">Ram's Inn</option>
+                    </select><br><br>
+                    <label>Enter No. of Days:</label>
+                    <input type="number" name="hdays" min="1" max="50" required><br><br>
+                    <label>Enter No. of Rooms:</label>
+                    <input type="number" name="hrooms" min="1" max="50" required><br><br>
+                    <button type="submit" name="book" value="booked">Book</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    {%endif%}
+    <footer class="foot">
+        <h1>Tamilnadu Tourism</h1>
+        <p>Copyright © 2024 Tamilnadu Tourism. All rights reserved</p>
+    </footer>
+</body>
+
+</html>

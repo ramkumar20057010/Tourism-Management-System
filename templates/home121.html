@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style2.css')}}">
+</head>
+<style>
+    .place1 a{
+        color: purple;
+        
+    }
+    @keyframes fadein {
+        0% {
+            background-image: url('{{url_for("static",filename="madurai/madurai8.png")}}');
+            transition: 0.5s;
+
+        }
+
+        25% {
+            background-image: url('{{url_for("static",filename="chennai/chennai-marina-beach.png")}}');
+            transition: 0.5s;
+        }
+
+        50% {
+            background-image: url('{{url_for("static",filename="vellore/vellore-golden-temple.png")}}');
+            transition: 0.5s;
+        }
+
+        75% {
+            background-image: url('{{url_for("static",filename="thanjavur/thanjavur-vijaynagar-fort.png")}}');
+            transition: 0.5s;
+        }
+
+        100% {
+            background-image: url('{{url_for("static",filename="ooty/ooty-doddabetta-peak.png")}}');
+            transition: 0.5s;
+        }
+    }
+</style>
+
+<body>
+    <header class="head">
+        <nav class="navbar">
+            
+            <div class="guest">
+                {% if "email" not in session:%}
+                <h1>G</h1>
+                <p>Guest</p>
+                {%else:%}
+                <h1>{{session["u_name"][0]}}</h1>
+                <p>{{session["u_name"]}}</p>
+                {%endif%}
+            </div>
+            <div class="cont">
+                <h1>Tamilnadu Tourism</h1>
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/history">History</a></li>
+                {%if "email" not in session: %}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+                {%else:%}
+                <li><a href="/logout">Logout</a></li>
+                {%endif%}
+            </ul>
+
+            
+        </nav>
+    </header>
+    <section class="secanimation">
+        <h1>TAMILNADU TOURISM</h1>
+    </section>
+    <section class="sechome">
+        <h1 class="cont2">POPULAR PLACES IN TAMILNADU!</h1>
+        <div class="sec1">
+            <div class="place1">
+                <a href="/chennai">
+                    <center>
+                        <img src="{{url_for('static',filename='chennai/chennai1.png')}}" alt="loading..">
+                        <h1>CHENNAI</h1>
+                    </center>
+                </a>
+            </div>
+            <div class="place1">
+                <a href="/mahabalipuram">
+                    <center>
+                        <img src="{{url_for('static',filename='mahabalipuram/mahabalipuram2.png')}}" alt="loading..">
+                        <h1>MAHABALIPURAM</h1>
+                    </center>
+                </a>
+            </div>
+            <div class="place1">
+                <a href="/vellore">
+                    <center>
+                        <img src="{{url_for('static',filename='vellore/Vellore3.avif')}}" alt="loading..">
+                        <h1>VELLORE</h1>
+                    </center>
+                </a>
+            </div>
+            <div class="place1">
+                <a href="/kanchipuram">
+                    <center>
+                        <img src="{{url_for('static',filename='kanchipuram/kanchipuram4.png')}}" alt="loading..">
+                        <h1>KANCHIPURAM</h1>
+                    </center>
+                </a>
+            </div>
+            <div class="place1">
+                <a href="/coimbatore">
+                    <center>
+                        <img src="{{url_for('static',filename='coimbatore/coimbatore5.png')}}" alt="loading..">
+                        <h1>COIMBATORE</h1>
+                    </center>
+                </a>
+            </div>
+            <div class="place1">
+                <a href="/ooty">
+                    <center>
+                        <img src="{{url_for('static',filename='ooty/ooty6.png')}}" alt="loading..">
+                        <h1>OOTY</h1>
+                    </center>
+                </a>
+            </div>
+            <div class="place1">
+                <a href="/thanjavur">
+                    <center>
+                        <img src="{{url_for('static',filename='thanjavur/thanjavur7.png')}}" alt="loading..">
+                        <h1>THANJAVUR</h1>
+                    </center>
+                </a>
+            </div>
+            <div class="place1">
+                <a href="/madurai">
+                    <center>
+                        <img src="{{url_for('static',filename='madurai/madurai8.png')}}" alt="loading..">
+                        <h1>MADURAI</h1>
+                    </center>
+                </a>
+            </div>
+            <div class="place1">
+                <a href="/kodaikanal">
+                    <center>
+                        <img src="{{url_for('static',filename='kodaikanal/kodaikanal9.png')}}" alt="loading..">
+                        <h1>KODAIKANAL</h1>
+                    </center>
+                </a>
+            </div>
+            <div class="place1">
+                <a href="/kanyakumari">
+                    <center>
+                        <img src="{{url_for('static',filename='kanyakumari/kanyakumari10.png')}}" alt="loading..">
+                        <h1>KANYAKUMARI</h1>
+                    </center>
+                </a>
+            </div>
+            <div class="place1">
+                <a href="/rameswaram">
+                    <center>
+                        <img src="{{url_for('static',filename='rameswaram/rameswaram11.png')}}" alt="loading..">
+                        <h1>RAMESWARAM</h1>
+                    </center>
+                </a>
+            </div>
+            <div class="place1">
+                <a href="/tirunelveli">
+                    <center>
+                        <img src="{{url_for('static',filename='tirunelveli/tirunelveli-nellaippar-kovil.png')}}" alt="loading..">
+                        <h1>TIRUNELVELI</h1>
+                    </center>
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer class="foot">
+        <h1>Tamilnadu Tourism</h1>
+        <p>Copyright © 2024 Tamilnadu Tourism. All rights reserved</p>
+    </footer>
+</body>
+
+</html>

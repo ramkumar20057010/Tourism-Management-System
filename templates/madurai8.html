@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style2.css')}}">
+    
+</head>
+<style>
+    .secform{
+        background-image: url("{{url_for('static',filename='chennai/chennai-semmozhi-poonga.png')}}");
+    }
+    .rqlogin button{
+        margin-top: 100px;
+    }
+    @keyframes fadein {
+        0% {
+            background-image: url('{{url_for("static",filename="madurai/madurai-meenakshi-temple.png")}}');
+            transition: 0.5s;
+
+        }
+
+        25% {
+            background-image: url('{{url_for("static",filename="madurai/madurai-samanar-hills.png")}}');
+            transition: 0.5s;
+        }
+
+        50% {
+            background-image: url('{{url_for("static",filename="madurai/madurai-thirumalai-nayakar-mahal.png")}}');
+            transition: 0.5s;
+        }
+
+        75% {
+            background-image: url('{{url_for("static",filename="madurai/madurai-vaigai-dam.png")}}');
+            transition: 0.5s;
+        }
+
+        100% {
+            background-image: url('{{url_for("static",filename="madurai/madurai-puthu-mandapam.png")}}');
+            transition: 0.5s;
+        }
+    }
+</style>
+
+<body>
+    <header class="head">
+        <nav class="navbar">
+            
+
+
+            <div class="guest">
+                {% if "email" not in session:%}
+                <h1>G</h1>
+                <p>Guest</p>
+                {%else:%}
+                <h1>{{session["u_name"][0]}}</h1>
+                <p>{{session["u_name"]}}</p>
+                {%endif%}
+            </div>
+            <div class="cont">
+                <h1>Tamilnadu Tourism</h1>
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/history">History</a></li>
+                {%if "email" not in session: %}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+                {%else:%}
+                <li><a href="/logout">Logout</a></li>
+                {%endif%}
+            </ul>
+
+
+
+        </nav>
+    </header>
+    <section class="secanimation">
+        <h1>MADURAI</h1>
+    </section>
+    <section class="sechome">
+        <h1 class="cont2">POPULAR PLACES IN MADURAI!</h1>
+        <div class="sec1">
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='madurai/madurai-airam-kaal-mandapam.png')}}" alt="loading..">
+                    <h1>Airam Kaal Mandapam</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='madurai/madurai-gandhi-memorial-museum.png')}}" alt="loading..">
+                    <h1>Gandhi Memorial Museum</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='madurai/madurai-kutladampatti-falls.png')}}" alt="loading..">
+                    <h1>Kutladampatti Falls</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='madurai/madurai-meenakshi-temple.png')}}" alt="loading..">
+                    <h1>Meenakshi Temple</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='madurai/madurai-pazhamudhir-solai-temple.png')}}" alt="loading..">
+                    <h1>Pazhamudhir Solai Temple</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='madurai/madurai-puthu-mandapam.png')}}" alt="loading..">
+                    <h1>Puthu Mandapam</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='madurai/madurai-residency-hotel.png')}}" alt="loading..">
+                    <h1>Residency Hotel</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='madurai/madurai-samanar-hills.png')}}" alt="loading..">
+                    <h1>Samanar Hills</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='madurai/madurai-st-marys-cathedral-church.png')}}" alt="loading..">
+                    <h1>St. Marys Cathedral Church</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='madurai/madurai-thirumalai-nayakar-mahal.png')}}" alt="loading..">
+                    <h1>Thirumalai Nayakar Mahal</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='madurai/madurai-vaigai-dam.png')}}" alt="loading..">
+                    <h1>Vaigai Dam</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='madurai/madurai-vandiyur-mariamman-teppakulam.png')}}" alt="loading..">
+                    <h1>Vandiyur Mariamman Teppakulam</h1>
+                </center>
+            </div>
+            <div class="place1">
+                <center>
+                    <img src="{{url_for('static',filename='madurai/madurai-vishaal-de-mal.png')}}" alt="loading..">
+                    <h1>Vishaal De-mal</h1>
+                </center>
+            </div>
+        </div>
+    </section>
+
+    
+    {%if "email" not in session:%}
+    <section class="rqlogin">
+        <center><button onclick="location.href='/login'">Please Login To Book!..</button></center>
+    </section>
+    {%else:%}  
+    
+    
+    
+    <section class="secform">
+        <div class="tform">
+            <div class="tourform">
+                <form action="/cart" method="GET" class="tft">
+                    <h1>Tour Booking</h1>
+                    <input type="text" name="uid" value="{{session['u_id']}}" hidden>
+                    <input type="text" name="place" value="Madurai" hidden>
+                    <label>Enter No. of Men:</label>
+                    <input type="number" name="men" min="0" max="100" required><br><br>
+                    <label>Enter No. of Women:</label>
+                    <input type="number" name="women" min="0" max="100" required><br><br>
+                    <label>Enter No. of Kids:</label>
+                    <input type="number" name="children" min="0" max="100" required><br><br>
+                    <label>Enter Date:</label>
+                    <input type="date" name="tdate" required><br><br>
+                    <label>Enter Time:</label>
+                    <input type="time" name="ttime" required><br><br>
+                    <label>Enter Location:</label>
+                    <input type="text" name="dest" required><br><br>
+                    <h1>Hotel Booking</h1>
+                    <label>Select Hotel:</label>
+                    <select name="hname" required>
+                        <option value="Heritage Madurai">Heritage Madurai</option>
+                        <option value="Amika Hotel">Amika Hotel</option>
+                        <option value="Hotel Sabarees">Hotel Sabarees</option>
+                        <option value="Hotel Royal Court">Hotel Royal Court</option>
+                        <option value="Hotel Padmam">Hotel Padmam</option>
+                    </select><br><br>
+                    <label>Enter No. of Days:</label>
+                    <input type="number" name="hdays" min="1" max="50" required><br><br>
+                    <label>Enter No. of Rooms:</label>
+                    <input type="number" name="hrooms" min="1" max="50" required><br><br>
+                    <button type="submit" name="book" value="booked">Book</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    {%endif%}
+    <footer class="foot">
+        <h1>Tamilnadu Tourism</h1>
+        <p>Copyright © 2024 Tamilnadu Tourism. All rights reserved</p>
+    </footer>
+</body>
+
+</html>
