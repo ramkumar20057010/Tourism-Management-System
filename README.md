@@ -82,7 +82,7 @@ Admins can manage packages and monitor bookings.
 
 ## 📂 Project Type
 
-College Mini Project  
+Academic College Mini Project  
 
 ---
 
