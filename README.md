@@ -57,7 +57,7 @@ Admins can manage packages and monitor bookings.
 ---
 
 ### 📝 Package Booking Form
-![Package Booking]screenshots/booking-form.png)
+![Package Booking](screenshots/booking-form.png)
 
 ---
 
