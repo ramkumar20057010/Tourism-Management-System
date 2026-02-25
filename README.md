@@ -11,8 +11,6 @@ It allows users to explore tourism packages and make bookings online, while enab
 - View Available Tourism Packages
 - Package Booking System
 - Booking Confirmation
-- Admin Panel to Manage Packages
-- Admin View of Customer Bookings
 - MySQL Database Integration
 
 ---
