@@ -61,13 +61,16 @@ Admins can manage packages and monitor bookings.
 
 ---
 
+### 🛒 Cart Page
+![Cart](screenshots/cart.png)
+
+---
+
 ### ✅ Booking Confirmation Page
 ![Booking Confirmation](screenshots/booking-confirmation.png)
 
 ---
 
-
----
 
 ## ⚙️ How to Run Locally
 
